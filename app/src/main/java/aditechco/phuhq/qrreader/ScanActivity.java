@@ -146,7 +146,7 @@ public class ScanActivity extends AppCompatActivity {
 
     private void setupQREader() {
         try {
-            //BarcodeDetector detector = new BarcodeDetector.Builder(getApplicationContext()).setBarcodeFormats(Barcode.ALL_FORMATS);
+//            BarcodeDetector detector = new BarcodeDetector(getApplicationContext().);
             qrEader = new QREader.Builder(this, mySurfaceView, new QRDataListener() {
                 @Override
                 public void onDetected(final String data) {
