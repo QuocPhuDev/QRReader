@@ -19,6 +19,8 @@ import android.view.SurfaceView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.vision.barcode.Barcode;
+import com.google.android.gms.vision.barcode.BarcodeDetector;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -144,6 +146,7 @@ public class ScanActivity extends AppCompatActivity {
 
     private void setupQREader() {
         try {
+            //BarcodeDetector detector = new BarcodeDetector.Builder(getApplicationContext()).setBarcodeFormats(Barcode.ALL_FORMATS);
             qrEader = new QREader.Builder(this, mySurfaceView, new QRDataListener() {
                 @Override
                 public void onDetected(final String data) {
@@ -164,6 +167,7 @@ public class ScanActivity extends AppCompatActivity {
                     .height(mySurfaceView.getHeight())
                     .width(mySurfaceView.getWidth())
                     .build();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
